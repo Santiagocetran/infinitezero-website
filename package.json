@@ -1,0 +1,21 @@
+{
+  "name": "infinitezero-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev --host 127.0.0.1",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview --host 127.0.0.1",
+    "check": "node scripts/check-build.mjs",
+    "preview:stop": "ASTRO_TELEMETRY_DISABLED=1 astro preview stop"
+  },
+  "dependencies": {
+    "@fontsource-variable/geist": "5.3.0",
+    "astro": "7.4.4"
+  }
+}

@@ -1,0 +1,28 @@
+---
+// A quiet, static fallback remains available without JavaScript or canvas.
+const marks = Array.from({ length: 60 }, (_, i) => ({
+  x: 540 + ((i * 137) % 700),
+  y: 80 + ((i * 89) % 700),
+  char: ["+", ".", ":", "*"][i % 4],
+}));
+---
+
+<div class="ambient-network" aria-hidden="true">
+  <svg
+    class="network-fallback"
+    viewBox="0 0 1440 900"
+    preserveAspectRatio="xMidYMid slice"
+  >
+    {
+      marks.map(({ x, y, char }) => (
+        <text x={x} y={y} fill="#64d8cf" opacity=".3" font-size="14">
+          {char}
+        </text>
+      ))
+    }
+  </svg>
+  <canvas id="network-canvas"></canvas>
+</div>
+<button class="motion-toggle" type="button" aria-pressed="false" hidden
+  >Pause background</button
+>
